@@ -1,4 +1,4 @@
-PROJECT(conan-klsctp-tools-test)
+PROJECT(conan-lksctp-tools-test)
 cmake_minimum_required(VERSION 2.8)
 
 # Verbose mode #################################################################

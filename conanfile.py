@@ -25,7 +25,7 @@ class LKSCTPToolsConan(ConanFile):
     author = "Uilian Ries <uilianries@gmail.com>"
     license = "GPL-2"
     release_name = "%s-%s" % (name, version)
-    build_dir = mkdtemp(suffix="conan-klsctp-tools")
+    build_dir = mkdtemp(suffix=name)
 
     def source(self):
         tar_name = "%s.tar.gz" % self.release_name
