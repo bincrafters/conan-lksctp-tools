@@ -19,8 +19,8 @@ class LKSCTPToolsConan(ConanFile):
     version = "1.0.17"
     generators = "cmake", "txt"
     settings = "os", "arch", "compiler", "build_type"
-    options = {"shared": [True, False]}
-    default_options = "shared=True"
+    options = {"shared": [True, False], "fpic": [True, False]}
+    default_options = "shared=True", "fpic=False"
     url = "https://github.com/uilianries/conan-lksctp-tools"
     author = "Uilian Ries <uilianries@gmail.com>"
     license = "GPL-2"
@@ -37,6 +37,7 @@ class LKSCTPToolsConan(ConanFile):
 
     def build(self):
         env_build = AutoToolsBuildEnvironment(self)
+        env_build.fpic = self.options.fpic
         with environment_append(env_build.vars):
             with chdir("%s-%s" % (self.name, self.release_name)):
                 self.run("./bootstrap")
