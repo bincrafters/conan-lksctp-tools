@@ -10,7 +10,6 @@ from conans.tools import unzip
 from conans.tools import chdir
 from conans.tools import environment_append
 from conans.tools import check_md5
-from conans.tools import replace_in_file
 
 
 class LKSCTPToolsConan(ConanFile):
@@ -41,9 +40,6 @@ class LKSCTPToolsConan(ConanFile):
         env_build.fpic = self.options.fpic
         with environment_append(env_build.vars):
             with chdir("%s-%s" % (self.name, self.release_name)):
-                if self.settings.os == "Macos":
-                    replace_in_file("bootstrap", "libtoolize --force --copy",
-                                    "glibtoolize --force --copy")
                 self.run("./bootstrap")
                 library_type = "--disable-static" if self.options.shared else "--disable-shared"
                 self.run("./configure --prefix=%s --disable-tests %s" %
