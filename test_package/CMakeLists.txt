@@ -1,8 +1,5 @@
-PROJECT(conan-lksctp-tools-test)
+project(test_package)
 cmake_minimum_required(VERSION 2.8)
-
-# Verbose mode #################################################################
-set(CMAKE_VERBOSE_MAKEFILE 1)
 
 # Conan package ################################################################
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
