@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/bincrafters/conan-lksctp-tools.svg?branch=release/1.0.17)](https://travis-ci.org/bincrafters/conan-lksctp-tools)
+[![CircleCI](https://circleci.com/gh/bincrafters/conan-lksctp-tools/tree/stable%2F1.0.17.svg?style=svg)](https://circleci.com/gh/bincrafters/conan-lksctp-tools/tree/stable%2F1.0.17)
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://img.shields.io/badge/License-GPL%20v2-blue.svg)
 
 # Linux Kernel Stream Control Transmission Protocol Tools
