@@ -6,5 +6,5 @@ int main()
 {
     int ret = sctp_getaddrlen(AF_INET);
     printf("%d\n", ret);
-    return ret > 0;
+    return ret > 0 ? 0 : 1;
 }
