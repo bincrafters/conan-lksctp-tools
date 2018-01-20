@@ -12,7 +12,7 @@ class LKSCTPToolsConan(ConanFile):
     url = "https://github.com/uilianries/conan-lksctp-tools"
     description = "The lksctp-tools project provides a Linux user space library for SCTP"
     author = "Uilian Ries <uilianries@gmail.com>"
-    license = "GPL-2, LGPL 2.1"
+    license = "GPL-2.0, LGPL-2.1"
     exports = ["LICENSE.md"]
 
     source_subfolder = "source_subfolder"
