@@ -57,10 +57,8 @@ class LKSCTPToolsConan(ConanFile):
 
     def move_withsctp(self):
         with tools.chdir(os.path.join(self.package_folder, "lib")):
-            if not self.options.with_sctp:
-                shutil.rmtree("lksctp-tools")
-            else:
+            if self.options.with_sctp:
                 with tools.chdir("lksctp-tools"):
                     for libfile in glob.glob("libwithsctp*"):
                         os.rename(libfile, os.path.join("..", libfile))
-                os.rmdir("lksctp-tools")
+            shutil.rmtree("lksctp-tools")
