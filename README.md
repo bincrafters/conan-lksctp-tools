@@ -35,6 +35,7 @@ If you handle multiple dependencies in your project is better to add a *conanfil
 
     [options]
     lksctp-tools:shared=True # False
+    lksctp-tools:with_sctp=True # False (a tool when used with existing TCP binaries replaces TCP with SCTP.)
 
     [generators]
     txt
@@ -47,4 +48,4 @@ Complete the installation of requirements for your project running:</small></spa
 Project setup installs the library (and all his dependencies) and generates the files *conanbuildinfo.txt* and *conanbuildinfo.cmake* with all the paths and variables that you need to link with your dependencies.
 
 ### License
-[GPL-2](LICENSE)
+[MIT](LICENSE)
