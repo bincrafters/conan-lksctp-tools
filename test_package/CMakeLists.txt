@@ -1,22 +1,8 @@
+cmake_minimum_required(VERSION 2.8.11)
 project(test_package)
-cmake_minimum_required(VERSION 2.8)
 
-# Conan package ################################################################
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
-# Header files #################################################################
-include_directories(include)
-
-# Source files #################################################################
-file(GLOB SOURCE_FILES src/*.c)
-
-# Build applications ###########################################################
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+add_executable(${PROJECT_NAME} test_package.c)
 target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})
-
-# Add test #####################################################################
-enable_testing()
-add_test(NAME test-all
-         WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin
-         COMMAND ${PROJECT_NAME})

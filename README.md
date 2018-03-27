@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/bincrafters/conan-lksctp-tools.svg?branch=release/1.0.17)](https://travis-ci.org/bincrafters/conan-lksctp-tools)
+[![CircleCI](https://circleci.com/gh/bincrafters/conan-lksctp-tools/tree/stable%2F1.0.17.svg?style=svg)](https://circleci.com/gh/bincrafters/conan-lksctp-tools/tree/stable%2F1.0.17)
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://img.shields.io/badge/License-GPL%20v2-blue.svg)
 
 # Linux Kernel Stream Control Transmission Protocol Tools
@@ -34,6 +35,7 @@ If you handle multiple dependencies in your project is better to add a *conanfil
 
     [options]
     lksctp-tools:shared=True # False
+    lksctp-tools:with_sctp=True # False (a tool when used with existing TCP binaries replaces TCP with SCTP.)
 
     [generators]
     txt
@@ -46,4 +48,4 @@ Complete the installation of requirements for your project running:</small></spa
 Project setup installs the library (and all his dependencies) and generates the files *conanbuildinfo.txt* and *conanbuildinfo.cmake* with all the paths and variables that you need to link with your dependencies.
 
 ### License
-[GPL-2](LICENSE)
+[MIT](LICENSE)
