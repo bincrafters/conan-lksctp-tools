@@ -5,9 +5,11 @@
 #include <netinet/sctp.h>
 #include <string.h>
 #include <stdio.h>
+#include <linux/version.h>
 
 int main(int argc, char **argv) {
     int fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP );
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,32)
     const char* argument = {""};
     const char* with_sctp_option = "with_sctp";
     int ret = 0;
@@ -20,6 +22,7 @@ int main(int argc, char **argv) {
     ret = sctp_getaddrlen(AF_INET);
     printf("sctp_getaddrlen: %d\n", ret);
     socklen_t len = sizeof(prot);
+
     getsockopt( fd, SOL_SOCKET, SO_PROTOCOL, &prot, &len );
     printf("getsockopt: %d\n", prot);
 
@@ -28,4 +31,8 @@ int main(int argc, char **argv) {
     } else {
         return !((prot == IPPROTO_TCP) && (ret));
     }
+#else
+    return fd != -1;
+#endif
 }
+
