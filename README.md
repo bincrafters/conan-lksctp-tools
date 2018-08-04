@@ -49,3 +49,4 @@ Project setup installs the library (and all his dependencies) and generates the 
 
 ### License
 [MIT](LICENSE)
+
