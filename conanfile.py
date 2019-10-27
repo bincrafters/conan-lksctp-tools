@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 from conans.errors import ConanInvalidConfiguration
 import os, glob, shutil
 from conans import ConanFile, AutoToolsBuildEnvironment, tools
@@ -31,6 +28,7 @@ class LKSCTPToolsConan(ConanFile):
         if self.settings.os != "Linux":
             raise ConanInvalidConfiguration("Linux Kernel SCTP Tools is only supported for Linux.")
         del self.settings.compiler.libcxx
+        del self.settings.compiler.cppstd
 
     def build(self):
         env_build = AutoToolsBuildEnvironment(self)
