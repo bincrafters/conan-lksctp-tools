@@ -14,7 +14,6 @@ class LKSCTPToolsConan(ConanFile):
     url = "https://github.com/bincrafters/conan-lksctp-tools"
     description = "The lksctp-tools project provides a Linux user space library for SCTP"
     license = "GPL-2.0, LGPL-2.1"
-    exports = ["LICENSE.md"]
     _source_subfolder = "source_subfolder"
 
     def source(self):
