@@ -1,4 +1,4 @@
-from conans.errors import ConanInvalidConfiguration
+from conan.errors import ConanInvalidConfiguration
 import os, glob, shutil
 from conans import ConanFile, AutoToolsBuildEnvironment, tools
 
